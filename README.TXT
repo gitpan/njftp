@@ -1,4 +1,4 @@
-njftp   Version 1.0
+njftp   Version 1.1
 *** Syntax: njftp config_file
 
 (C) 2001 Robert Eden, ADC Telecommunications,  rmeden@yahoo.com
@@ -7,7 +7,7 @@ No warranty expressed or implied, etc.  Use at your own risk.
 
 *************************************************************************
 **** if you use this script, please drop me an email and say thanks! ****
-****                        rmeden@yahoo.com                         ****
+****                        reden@cpan.org                           ****
 *************************************************************************
 
 This programs allows you to FTP files as well as do other things.  It is "not just FTP!".
@@ -81,10 +81,10 @@ sample:
             ENV	UNSENT	C:/temp/unsent
             ENV	SENT	c:\temp\sent
 
-            FIREWALL INETAUTH inetauth.sbc.com user pass
+            FIREWALL myproxy server user pass
 
-            SITE	plexar	ts10k1b.sbc.com /usr/tmp plexar password
-            SITE	berk    kalli.sbc.com   . csberk password
+            SITE	site1	site1.com /usr/tmp user password
+            SITE	site2   site2.com        . user password
             
-            XMIT	BINARY UNSENT SENT \.cdr$ berk INETAUTH
-            XMIT	BINARY UNSENT SENT \.cdr$ plexar
+            XMIT	BINARY UNSENT SENT \.cdr$ site1 myproxy
+            XMIT	BINARY UNSENT SENT \.cdr$ site2
